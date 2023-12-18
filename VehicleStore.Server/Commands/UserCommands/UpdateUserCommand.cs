@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using VehicleStore.Server.Database;
 using VehicleStore.Server.Models.RequestModels.UserRequestModels;
 

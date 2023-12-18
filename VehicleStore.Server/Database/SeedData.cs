@@ -67,7 +67,6 @@ namespace VehicleStore.Server.Database
 
                 context.SaveChanges();
             }
-
         }
     }
 }

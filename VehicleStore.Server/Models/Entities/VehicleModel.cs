@@ -8,10 +8,12 @@ namespace VehicleStore.Server.Models.Entities
         Motor,
         Automobile,
     }
+
     public class VehicleModel
     {
         [Key]
         public Guid Id { get; set; }
+
         public string Name { get; set; }
         public ModelType Type { get; set; }
         public string ImageUrl { get; set; }

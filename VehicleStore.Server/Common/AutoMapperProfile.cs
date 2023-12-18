@@ -1,7 +1,4 @@
 ﻿using AutoMapper;
-using AutoMapper.Features;
-using System;
-using VehicleStore.Server.Database;
 using VehicleStore.Server.Models.Entities;
 using VehicleStore.Server.Models.RequestModels.UserRequestModels;
 using VehicleStore.Server.Models.RequestModels.VehicleModelRequestModels;
@@ -12,7 +9,7 @@ using VehicleStore.Server.Models.ResponseModels.VehicleResponseModels;
 
 namespace VehicleStore.Server.Common
 {
-    public class AutoMapperProfile: Profile
+    public class AutoMapperProfile : Profile
     {
         public AutoMapperProfile()
         {
@@ -28,9 +25,8 @@ namespace VehicleStore.Server.Common
 
             // User
             CreateMap<User, UserResponseModel>()
-                .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CreatedAt.ToString("dd/MM/yyyy") ));
+                .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CreatedAt.ToString("dd/MM/yyyy")));
             CreateMap<CreateUserRequestModel, User>();
         }
-
     }
 }

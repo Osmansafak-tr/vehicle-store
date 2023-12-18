@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 using VehicleStore.Server.Models.Entities;
 
 namespace VehicleStore.Server.Database

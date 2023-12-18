@@ -23,7 +23,7 @@ namespace VehicleStore.Server.Controllers
         public IActionResult GetUsers()
         {
             var command = new GetUsersCommand(_context, _mapper);
-            var users =  command.Handle();
+            var users = command.Handle();
             if (users.Count == 0)
                 return Ok("There are no users right now.");
             return Ok(users);
@@ -34,13 +34,13 @@ namespace VehicleStore.Server.Controllers
         {
             var command = new GetUserByIdCommand(_context, _mapper)
             {
-                Id= id
+                Id = id
             };
             var user = command.Handle();
             return Ok(user);
         }
 
-        [HttpPost] 
+        [HttpPost]
         public IActionResult CreateUser(CreateUserRequestModel model)
         {
             var command = new CreateUserCommand(_context, _mapper)

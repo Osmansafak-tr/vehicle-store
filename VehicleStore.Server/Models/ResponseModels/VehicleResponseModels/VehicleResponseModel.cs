@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace VehicleStore.Server.Models.ResponseModels.VehicleResponseModels
+﻿namespace VehicleStore.Server.Models.ResponseModels.VehicleResponseModels
 {
     public class VehicleResponseModel
     {

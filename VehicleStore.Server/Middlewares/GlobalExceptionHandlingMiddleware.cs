@@ -14,7 +14,6 @@ namespace VehicleStore.Server.Middlewares
         //}
         public GlobalExceptionHandlingMiddleware()
         {
-               
         }
 
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
@@ -34,7 +33,7 @@ namespace VehicleStore.Server.Middlewares
 
                 ProblemDetails problemDetails = new()
                 {
-                    Detail= e.Message,
+                    Detail = e.Message,
                     Status = context.Response.StatusCode,
                 };
                 var json = JsonConvert.SerializeObject(problemDetails);

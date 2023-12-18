@@ -6,6 +6,7 @@ namespace VehicleStore.Server.Models.Entities
     {
         [Key]
         public Guid Id { get; set; }
+
         public Guid ModelId { get; set; }
         public VehicleModel VehicleModel { get; set; } = null!;
         public string Plate { get; set; }

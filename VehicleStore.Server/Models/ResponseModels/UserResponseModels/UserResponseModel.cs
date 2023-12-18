@@ -1,6 +1,4 @@
-﻿using VehicleStore.Server.Models.Entities;
-
-namespace VehicleStore.Server.Models.ResponseModels.UserResponseModels
+﻿namespace VehicleStore.Server.Models.ResponseModels.UserResponseModels
 {
     public class UserResponseModel
     {

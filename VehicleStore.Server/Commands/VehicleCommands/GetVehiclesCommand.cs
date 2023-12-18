@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using VehicleStore.Server.Common;
 using VehicleStore.Server.Database;
-using VehicleStore.Server.Models.Entities;
 using VehicleStore.Server.Models.ResponseModels.VehicleResponseModels;
 
 namespace VehicleStore.Server.Commands.VehicleCommands
