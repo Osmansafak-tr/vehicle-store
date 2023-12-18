@@ -22,19 +22,12 @@ namespace VehicleStore.Server.Controllers
         [HttpGet]
         public IActionResult GetVehicleModels()
         {
-            try
-            {
-                var command = new GetVehicleModelsCommand(_context, _mapper);
-                var models = command.Handle();
-                if (models == null)
-                    return Ok("There aren't any vehicle view models.");
+            var command = new GetVehicleModelsCommand(_context, _mapper);
+            var models = command.Handle();
+            if (models == null)
+                return Ok("There aren't any vehicle view models.");
 
-                return Ok(models);
-            }
-            catch (Exception exc)
-            {
-                return Problem(exc.Message);
-            }
+            return Ok(models);
         }
 
         [HttpGet("{id}")]
