@@ -1,0 +1,38 @@
+[
+  {
+    "v_id": 1,
+    "model_id": 0,
+    "plate": "34 FK 99",
+    "user_id": 1,
+    "vehicle_id": "11DSDFKMASDFMAS"
+  },
+  {
+    "v_id": 2,
+    "model_id": 1,
+    "plate": "26 FK 99",
+    "user_id": 1,
+    "vehicle_id": "12DSDFKMASDFMAS"
+  },
+  {
+    "v_id": 3,
+    "model_id": 2,
+    "plate": "42 FK 99",
+    "user_id": 1,
+    "vehicle_id": "13DSDFKMASDFMAS"
+  },
+  {
+    "v_id": 4,
+    "model_id": 3,
+    "plate": "01 IK 1999",
+    "user_id": 2,
+    "vehicle_id": "21DSDFKMASDFMAS"
+  },
+  {
+    "v_id": 5,
+    "model_id": 4,
+    "plate": "34 FG 1999",
+    "user_id": 2,
+    "vehicle_id": "22DSDFKMASDFMAS"
+  }
+
+]
