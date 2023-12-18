@@ -1,0 +1,134 @@
+[
+  {
+    "id": 0,
+    "type": "Otomobiller",
+    "name": "Fiesta",
+    "img": "fiesta.png"
+  },
+  {
+    "id": 1,
+    "type": "Otomobiller",
+    "name": "Focus",
+    "img": "focus.png"
+  },
+  {
+    "id": 2,
+    "type": "Ticari Araçlar",
+    "name": "Transit Minibüs",
+    "img": "Transit-Minibus.png"
+  },
+  {
+    "id": 3,
+    "type": "Ticari Araçlar",
+    "name": "Transit Van",
+    "img": "transit-van.png"
+  },
+  {
+    "id": 4,
+    "type": "Ticari Araçlar",
+    "name": "Transit Kamyonet",
+    "img": "Transit-Kamyonet.png"
+  },
+  {
+    "id": 5,
+    "type": "Ticari Araçlar",
+    "name": "Transit Courier",
+    "img": "Transit-Courier.png"
+  },
+  {
+    "id": 6,
+    "type": "Ticari Araçlar",
+    "name": "Yeni Transit Custom Van",
+    "img": "transit-van.png"
+  },
+  {
+    "id": 7,
+    "type": "Ticari Araçlar",
+    "name": "Transit Custom",
+    "img": "Transit-Custom.png"
+  },
+  {
+    "id": 8,
+    "type": "Ticari Araçlar",
+    "name": "Yeni Tourneo Connect",
+    "img": "TourneoConnect.png"
+  },
+  {
+    "id": 9,
+    "type": "Ticari Araçlar",
+    "name": "Tourneo Custom",
+    "img": "TourneoCustom.jpg"
+  },
+  {
+    "id": 10,
+    "type": "Ticari Araçlar",
+    "name": "Tourneo Courier",
+    "img": "Tourneo-Courier.png"
+  },
+  {
+    "id": 11,
+    "type": "SUV Araçlar",
+    "name": "Yeni Ranger",
+    "img": "ranger-wiltrak.png"
+  },
+  {
+    "id": 12,
+    "type": "SUV Araçlar",
+    "name": "Kuga",
+    "img": "kuga.png"
+  },
+  {
+    "id": 13,
+    "type": "SUV Araçlar",
+    "name": "Puma",
+    "img": "puma.png"
+  },
+  {
+    "id": 14,
+    "type": "Elektrikli Araçlar",
+    "name": "E-Transit",
+    "img": "E-Transit.png"
+  },
+  {
+    "id": 15,
+    "type": "Elektrikli Araçlar",
+    "name": "Yeni Ford Mustang Mach E",
+    "img": "Mustang-Mach-E.png"
+  },
+  {
+    "id": 16,
+    "type": "Performans Araçları",
+    "name": "Puma ST",
+    "img": "Puma-ST.png"
+  },
+  {
+    "id": 17,
+    "type": "Performans Araçları",
+    "name": "Fiesta ST",
+    "img": "fiesta-ST.png"
+  },
+  {
+    "id": 18,
+    "type": "Yolcu Taşımacılığı",
+    "name": "Tourneo Courier",
+    "img": "Tourneo-Courier-yt.png"
+  },
+  {
+    "id": 19,
+    "type": "Yolcu Taşımacılığı",
+    "name": "Yeni Tourneo Connect",
+    "img": "TourneoConnect-yt.png"
+  },
+  {
+    "id": 20,
+    "type": "Yolcu Taşımacılığı",
+    "name": "Tourneo Custom",
+    "img": "TourneoCustom-yt.png"
+  },
+  {
+    "id": 21,
+    "type": "Yolcu Taşımacılığı",
+    "name": "Transit Minibüs",
+    "img": "Transit-Minibus-yt.png"
+  }
+]

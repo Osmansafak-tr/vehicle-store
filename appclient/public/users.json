@@ -1,0 +1,22 @@
+[
+  {
+    "u_id": 1,
+    "email": "a@gmail.com",
+    "password": "sdfsafdsadf",
+    "name": "A",
+    "surname": "B",
+    "role": "user",
+    "created_at": "11/12/23",
+    "number_of_car":  3
+  },
+  {
+    "u_id": 2,
+    "email": "b@gmail.com",
+    "password": "fsdafasdsdfsafdsadf",
+    "name": "B",
+    "surname": "C",
+    "role": "user",
+    "created_at": "12/12/23",
+    "number_of_car": 2
+  }
+]
