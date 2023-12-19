@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using VehicleStore.Server.Common;
 using VehicleStore.Server.Database;
 using VehicleStore.Server.Middlewares;
@@ -19,6 +21,16 @@ builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.AddTransient<GlobalExceptionHandlingMiddleware>();
 builder.Services.AddScoped<IAppDbContext, AppDbContext>();
 builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
+builder.Services.AddAuthentication().AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateIssuerSigningKey = true,
+        ValidateAudience = false,
+        ValidateIssuer = false,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("thisIsTokenSecret"))
+    };
+});
 
 var app = builder.Build();
 
