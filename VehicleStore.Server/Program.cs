@@ -7,6 +7,7 @@ using System.Text;
 using VehicleStore.Server.Common;
 using VehicleStore.Server.Database;
 using VehicleStore.Server.Middlewares;
+using VehicleStore.Server.Services.AuthTokenHandler;
 using VehicleStore.Server.Services.PasswordHasher;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,23 +19,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
-    //options.SwaggerDoc("v1", new OpenApiInfo { Title = "TestWebApi", Version = "v1" });
-    options.AddSecurityDefinition("bearer", new OpenApiSecurityScheme()
+    options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme()
     {
         In = ParameterLocation.Header,
         Name = "Authorization",
         Description = "Please provide a valid token.",
         Type = SecuritySchemeType.Http,
         BearerFormat = "JWT",
-        Scheme = "bearer"
+        Scheme = "Bearer"
     });
 
     options.OperationFilter<SecurityRequirementsOperationFilter>();
 });
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString"))
-);
-builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.AddAuthentication(x =>
 {
     x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -45,14 +41,21 @@ builder.Services.AddAuthentication(x =>
     options.TokenValidationParameters = new TokenValidationParameters()
     {
         ValidateIssuerSigningKey = true,
+        ValidateLifetime = true,
         ValidateAudience = false,
         ValidateIssuer = false,
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("thisIsTokenSecret"))
     };
 });
+builder.Services.AddAuthorization();
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString"))
+);
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.AddTransient<GlobalExceptionHandlingMiddleware>();
 builder.Services.AddScoped<IAppDbContext, AppDbContext>();
 builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
+builder.Services.AddScoped<IAuthTokenHandler, AuthTokenHandler>();
 
 var app = builder.Build();
 
