@@ -15,8 +15,6 @@ namespace VehicleStore.Server.Common
         {
             // Vehicle
             CreateMap<Vehicle, VehicleResponseModel>();
-            CreateMap<VehicleModel, VehicleResponseModel>()
-                .ForMember(dest => dest.Model, opt => opt.MapFrom(src => src.Name));
             CreateMap<CreateVehicleRequestModel, Vehicle>();
 
             // VehicleModel
