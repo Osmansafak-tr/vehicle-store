@@ -1,10 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using VehicleStore.Server.Models.Entities;
+using VehicleStore.Server.Services.PasswordHasher;
 
 namespace VehicleStore.Server.Database
 {
     public class SeedData
     {
+        private static readonly IPasswordHasher _passwordHasher = new PasswordHasher();
+
         public static void Initialize(IServiceProvider serviceProvider)
         {
             using (var context = new AppDbContext(serviceProvider.GetRequiredService<DbContextOptions<AppDbContext>>()))
@@ -18,13 +21,13 @@ namespace VehicleStore.Server.Database
                     {
                         Id = guid_user,
                         Email = "admin@gmail.com",
-                        Password = "12345",
+                        Password = _passwordHasher.Hash("12345"),
                         Role = UserRole.Admin,
                     },
                     new User()
                     {
                         Email = "user@gmail.com",
-                        Password = "12345",
+                        Password = _passwordHasher.Hash("12345"),
                         Role = UserRole.User,
                     }
                 );
