@@ -29,7 +29,7 @@ namespace VehicleStore.Server.Services.PasswordHasher
             var hash = Convert.FromBase64String(elements[1]);
             var hashInputPassword = Rfc2898DeriveBytes.Pbkdf2(inputPassword, salt, Iterations, _hashAlgorithmName, KeySize);
 
-            return hashInputPassword.Equals(hash);
+            return CryptographicOperations.FixedTimeEquals(hash, hashInputPassword);
         }
     }
 }

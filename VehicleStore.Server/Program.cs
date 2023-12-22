@@ -8,7 +8,6 @@ using VehicleStore.Server.Common;
 using VehicleStore.Server.Database;
 using VehicleStore.Server.Middlewares;
 using VehicleStore.Server.Services.AuthTokenHandler;
-using VehicleStore.Server.Services.PasswordHasher;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -54,7 +53,6 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.AddTransient<GlobalExceptionHandlingMiddleware>();
 builder.Services.AddScoped<IAppDbContext, AppDbContext>();
-builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 builder.Services.AddScoped<IAuthTokenHandler, AuthTokenHandler>();
 
 var app = builder.Build();

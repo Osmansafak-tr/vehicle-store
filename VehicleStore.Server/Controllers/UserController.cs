@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using VehicleStore.Server.Commands.UserCommands;
 using VehicleStore.Server.Database;
@@ -20,7 +19,6 @@ namespace VehicleStore.Server.Controllers
             _mapper = mapper;
         }
 
-        [Authorize]
         [HttpGet]
         public IActionResult GetUsers()
         {
