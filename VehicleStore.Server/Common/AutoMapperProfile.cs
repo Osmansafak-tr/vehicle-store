@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using VehicleStore.Server.Models.Entities;
+using VehicleStore.Server.Models.RequestModels.AccountRequestModels;
 using VehicleStore.Server.Models.RequestModels.UserRequestModels;
 using VehicleStore.Server.Models.RequestModels.VehicleModelRequestModels;
 using VehicleStore.Server.Models.RequestModels.VehicleRequestModels;
@@ -25,6 +26,8 @@ namespace VehicleStore.Server.Common
             CreateMap<User, UserResponseModel>()
                 .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CreatedAt.ToString("dd/MM/yyyy")));
             CreateMap<CreateUserRequestModel, User>();
+
+            CreateMap<RegisterRequestModel, User>();
         }
     }
 }
