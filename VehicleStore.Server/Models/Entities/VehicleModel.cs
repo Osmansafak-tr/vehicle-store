@@ -16,7 +16,7 @@ namespace VehicleStore.Server.Models.Entities
 
         public string Name { get; set; }
         public ModelType Type { get; set; }
-        public string ImageUrl { get; set; }
+        public byte[] Image { get; set; }
         public ICollection<Vehicle> Vehicles { get; set; } = new List<Vehicle>();
         public DateTime CreatedAt { get; set; } = DateTime.Now;
     }

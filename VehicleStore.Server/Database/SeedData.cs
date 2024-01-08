@@ -40,14 +40,14 @@ namespace VehicleStore.Server.Database
                         Id = guid_model,
                         Name = "Test Model 1",
                         Type = ModelType.Automobile,
-                        ImageUrl = "testurl1",
+                        Image = new byte[64],
                     },
                     new VehicleModel()
                     {
                         Id = guid_model2,
                         Name = "Test Model 2",
                         Type = ModelType.Automobile,
-                        ImageUrl = "testurl2",
+                        Image = new byte[64],
                     }
                 );
 

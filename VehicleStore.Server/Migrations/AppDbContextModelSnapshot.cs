@@ -8,7 +8,7 @@ using VehicleStore.Server.Database;
 
 #nullable disable
 
-namespace VehicleStore.Server.Database.Migrations
+namespace VehicleStore.Server.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
@@ -94,9 +94,9 @@ namespace VehicleStore.Server.Database.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("ImageUrl")
+                    b.Property<byte[]>("Image")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()

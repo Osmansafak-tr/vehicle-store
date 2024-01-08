@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using VehicleStore.Server.Commands.VehicleModelCommands;
 using VehicleStore.Server.Database;
 using VehicleStore.Server.Models.RequestModels.VehicleModelRequestModels;
+using VehicleStore.Server.Services.ImageHandler;
 
 namespace VehicleStore.Server.Controllers
 {
@@ -12,11 +13,13 @@ namespace VehicleStore.Server.Controllers
     {
         private readonly IAppDbContext _context;
         private readonly IMapper _mapper;
+        private readonly IImageHandler _imageHandler;
 
-        public VehicleModelController(IAppDbContext context, IMapper mapper)
+        public VehicleModelController(IAppDbContext context, IMapper mapper, IImageHandler imageHandler)
         {
             _context = context;
             _mapper = mapper;
+            _imageHandler = imageHandler;
         }
 
         [HttpGet]
@@ -43,9 +46,9 @@ namespace VehicleStore.Server.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateVehicleModel([FromBody] CreateVehicleModelRequestModel model)
+        public IActionResult CreateVehicleModel([FromForm] CreateVehicleModelRequestModel model)
         {
-            var command = new CreateVehicleModelCommand(_context, _mapper)
+            var command = new CreateVehicleModelCommand(_context, _imageHandler)
             {
                 Model = model
             };
@@ -55,9 +58,9 @@ namespace VehicleStore.Server.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateVehicleModel(Guid id, UpdateVehicleModelRequestModel model)
+        public IActionResult UpdateVehicleModel(Guid id, [FromForm] UpdateVehicleModelRequestModel model)
         {
-            var command = new UpdateVehicleModelCommand(_context)
+            var command = new UpdateVehicleModelCommand(_context, _imageHandler)
             {
                 Id = id,
                 Model = model,
