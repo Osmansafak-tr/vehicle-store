@@ -9,10 +9,10 @@ using VehicleStore.Server.Database;
 
 #nullable disable
 
-namespace VehicleStore.Server.Database.Migrations
+namespace VehicleStore.Server.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231215084708_InitialCreate")]
+    [Migration("20231226131445_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -97,9 +97,9 @@ namespace VehicleStore.Server.Database.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("ImageUrl")
+                    b.Property<byte[]>("Image")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()

@@ -8,6 +8,7 @@ using VehicleStore.Server.Common;
 using VehicleStore.Server.Database;
 using VehicleStore.Server.Middlewares;
 using VehicleStore.Server.Services.AuthTokenHandler;
+using VehicleStore.Server.Services.ImageHandler;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -54,6 +55,7 @@ builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.AddTransient<GlobalExceptionHandlingMiddleware>();
 builder.Services.AddScoped<IAppDbContext, AppDbContext>();
 builder.Services.AddScoped<IAuthTokenHandler, AuthTokenHandler>();
+builder.Services.AddScoped<IImageHandler, ImageHandler>();
 
 var app = builder.Build();
 

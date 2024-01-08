@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using VehicleStore.Server.Models.Entities;
 using VehicleStore.Server.Models.RequestModels.UserRequestModels;
-using VehicleStore.Server.Models.RequestModels.VehicleModelRequestModels;
 using VehicleStore.Server.Models.RequestModels.VehicleRequestModels;
 using VehicleStore.Server.Models.ResponseModels.UserResponseModels;
 using VehicleStore.Server.Models.ResponseModels.VehicleModelResponseModels;
@@ -18,8 +17,8 @@ namespace VehicleStore.Server.Common
             CreateMap<CreateVehicleRequestModel, Vehicle>();
 
             // VehicleModel
-            CreateMap<VehicleModel, VehicleModelResponseModel>();
-            CreateMap<CreateVehicleModelRequestModel, VehicleModel>();
+            CreateMap<VehicleModel, VehicleModelResponseModel>()
+                .ForMember(dest => dest.Image, opt => opt.MapFrom(src => Convert.ToBase64String(src.Image)));
 
             // User
             CreateMap<User, UserResponseModel>()

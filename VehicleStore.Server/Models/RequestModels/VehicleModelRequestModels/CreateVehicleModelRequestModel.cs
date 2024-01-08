@@ -6,6 +6,6 @@ namespace VehicleStore.Server.Models.RequestModels.VehicleModelRequestModels
     {
         public string Name { get; set; }
         public ModelType Type { get; set; }
-        public string ImageUrl { get; set; }
+        public IFormFile Image { get; set; }
     }
 }
